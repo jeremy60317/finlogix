@@ -2,7 +2,7 @@
 
 ### `npm start`
 
-開啟[http://localhost:8080](http://localhost:8080)至主要專案網站
+開啟 [http://localhost:8080](http://localhost:8080) 至主要專案網站
 
 ### 主要使用技術
 
