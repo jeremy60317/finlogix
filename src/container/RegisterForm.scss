@@ -1,0 +1,105 @@
+@import '../styles/variables.scss';
+
+.registerFormBox {
+  padding: 8rem 22% 36rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 8rem 6.8%;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 14px rgba(132, 132, 132, 0.5);
+  border-radius: 20px;
+  background-color: $white;
+  .title {
+    font-size: 2.2rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    color: $text-acy-prime;
+    font-weight: $fw-Medium;
+  }
+  .content {
+    font-size: $fz-m;
+    text-align: center;
+    // padding: 0 9rem;
+    padding-bottom: 4rem;
+    font-weight: $fw-Regular;
+    color: $black;
+  }
+  .contentForm {
+    padding-bottom: 4rem;
+    .contentFormBox {
+      position: relative;
+    }
+    .contentFormErr {
+      color: red;
+      position: absolute;
+      bottom: -18px;
+    }
+    .contentFormTitle {
+      font-size: $fz-xs;
+      color: $text-gray;
+      margin-bottom: 0.7rem;
+    }
+    .inputBox {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.6rem;
+    }
+    input {
+      width: 100%;
+      font-size: $fz-xs;
+      color: $text-gray;
+      height: 3.2rem;
+      border: 1px solid #c6c6c6;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 10px;
+    }
+    select {
+      width: 100%;
+      font-size: $fz-xs;
+      border: 1px solid #c6c6c6;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: $pad) {
+  .registerFormBox {
+    padding: 8rem 3.4rem 36rem;
+    margin: 0;
+    border: 0;
+    border-radius: 0px;
+    .title {
+      font-size: $fz-l;
+      padding-bottom: 1rem;
+    }
+    .content {
+      font-size: $fz-xs;
+      padding: 0 9rem;
+      padding-bottom: 3.6rem;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .registerFormBox {
+    padding: 8rem 1.6rem 36rem;
+    margin: 0;
+    border: 0;
+    border-radius: 0px;
+    .title {
+      font-size: $fz-l;
+      padding-bottom: 1rem;
+      font-weight: $fw-Medium;
+    }
+    .content {
+      font-size: $fz-xs;
+      padding: 0;
+      padding-bottom: 2rem;
+    }
+  }
+}

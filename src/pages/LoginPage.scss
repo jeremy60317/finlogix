@@ -1,0 +1,102 @@
+@import '../styles/variables.scss';
+
+.loginModal {
+  position: relative;
+  top: 16rem;
+  width: 50%;
+  margin: auto;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 14px rgba(132, 132, 132, 0.5);
+  border-radius: 20px;
+  background-color: $white;
+}
+
+.modalLoginBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem 0;
+}
+
+.login {
+  width: 11.5rem;
+  height: 4rem;
+  border: 1px solid #013b81;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: $white;
+  color: #013b81;
+}
+
+.modalTitle {
+  padding: 1rem 1.6rem;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: $fw-SemiBold;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #013b81;
+}
+.formWrapBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.formWrap {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  input {
+    width: 65%;
+  }
+}
+.err {
+  color: red;
+  position: absolute;
+  bottom: -8px;
+  left: 34%;
+}
+.closeModal {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #013b81;
+  border-radius: 50%;
+  position: relative;
+  span {
+    display: block;
+    width: 80%;
+    height: 10%;
+    background-color: #013b81;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transform: rotate(45deg);
+  }
+  span:last-child {
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: $pad) {
+  .loginModal {
+    top: 16rem;
+    width: 60%;
+  }
+}
+
+@media (max-width: $mobile) {
+  .loginModal {
+    top: 16rem;
+    width: 90%;
+  }
+}

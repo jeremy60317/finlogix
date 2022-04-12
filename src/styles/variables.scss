@@ -1,0 +1,25 @@
+@import './function.scss';
+
+//base color
+$white: #ffffff;
+$black: #1c1c1c;
+
+$text-acy-prime: #01254f;
+$text-gray: #4a4a4a;
+
+//font-size
+$fz-xs: 1.2rem;
+$fz-s: 1.4rem;
+$fz-m: 1.6rem;
+$fz-l: 1.8rem;
+
+//font-weight
+$fw-light: 300;
+$fw-Regular: 400;
+$fw-Medium: 500;
+$fw-SemiBold: 700; //android沒有600
+$fw-black: 900;
+
+//viewWidth
+$mobile: 767px;
+$pad: 1365px;

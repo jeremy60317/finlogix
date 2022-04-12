@@ -1,0 +1,120 @@
+@import '../styles/variables.scss';
+
+.listItemBox {
+  width: 31.4%;
+  margin: 0.8%;
+  border: 0.1rem solid #d6d6d6;
+  box-sizing: border-box;
+  box-shadow: 0.1rem 0.2rem 0.6rem rgba(219, 219, 219, 0.5);
+  border-radius: 0.4rem;
+  background-color: #fff;
+}
+
+.itemContent {
+  padding: 2rem;
+  .date {
+    padding-bottom: 2rem;
+    font-weight: $fw-black;
+    font-size: $fz-s;
+    color: $text-acy-prime;
+  }
+  .title {
+    padding-bottom: 1.2rem;
+    font-weight: $fw-black;
+    font-size: $fz-m;
+    color: $text-acy-prime;
+    height: 40px;
+  }
+  .contentBox {
+    margin-bottom: 1.8rem;
+    font-weight: $fw-light;
+    font-size: $fz-s;
+    color: #333333;
+    overflow: hidden;
+    height: 60px;
+    .content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .time {
+    padding-bottom: 4.6rem;
+    font-weight: $fw-light;
+    font-size: $fz-s;
+    color: #333333;
+  }
+  .registerBox {
+    display: flex;
+    justify-content: space-between;
+    font-weight: $fw-black;
+    font-size: $fz-xs;
+    color: #43aa15;
+  }
+}
+
+@media (max-width: $pad) {
+  .listItemBox {
+    width: 48.4%;
+  }
+  .itemContent {
+    .date {
+      padding-bottom: 2rem;
+      font-weight: $fw-SemiBold;
+      font-size: $fz-xs;
+    }
+    .title {
+      padding-bottom: 1.2rem;
+      font-weight: $fw-SemiBold;
+      font-size: $fz-s;
+    }
+    .contentBox {
+      font-weight: $fw-light;
+      font-size: $fz-xs;
+    }
+    .time {
+      padding-bottom: 4.6rem;
+      font-size: $fz-xs;
+    }
+    .registerBox {
+      font-weight: $fw-SemiBold;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .listItemBox {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .listItemBox:last-child {
+    margin-bottom: 0;
+  }
+  .itemContent {
+    .date {
+      padding-bottom: 1.6rem;
+      font-weight: $fw-SemiBold;
+      font-size: $fz-xs;
+    }
+    .title {
+      padding-bottom: 1.4rem;
+      font-weight: $fw-SemiBold;
+      font-size: $fz-s;
+    }
+    .contentBox {
+      padding-bottom: 1.6rem;
+      font-weight: $fw-light;
+      font-size: $fz-xs;
+    }
+    .time {
+      padding-bottom: 2.9rem;
+      font-weight: $fw-light;
+      font-size: $fz-xs;
+    }
+    .registerBox {
+      font-weight: $fw-SemiBold;
+    }
+  }
+}

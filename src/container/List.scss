@@ -1,0 +1,57 @@
+@import '../styles/variables.scss';
+
+.listBox {
+  background-color: #f2f2f2;
+  padding: 8rem 6.7%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  position: relative;
+}
+.up,
+.down {
+  position: absolute;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  border-radius: 50%;
+  border: 4px solid #013b81;
+  color: #013b81;
+  background-color: #fff;
+}
+
+.up {
+  top: 0;
+  left: 25px;
+  bottom: 0;
+}
+
+.down {
+  top: 0;
+  right: 25px;
+  bottom: 0;
+}
+
+@media (max-width: $pad) {
+  .listBox {
+    padding: 4rem 4.4%;
+  }
+  .up,
+  .down {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile) {
+  .listBox {
+    padding: 4rem 8%;
+  }
+  .up,
+  .down {
+    display: none;
+  }
+}

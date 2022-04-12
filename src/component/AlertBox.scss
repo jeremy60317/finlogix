@@ -1,0 +1,33 @@
+@import '../styles/variables.scss';
+
+.alertBox {
+  padding: 2rem;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  .alertBoxTitle {
+    font-size: 2.8rem;
+  }
+  .alertBoxMessage {
+    padding: 1rem 0;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .alertBox {
+    padding: 2rem;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    .alertBoxTitle {
+      font-size: 2.4rem;
+    }
+    .alertBoxMessage {
+      padding: 1rem 0;
+      font-size: 1.8rem;
+    }
+  }
+}

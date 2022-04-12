@@ -1,0 +1,74 @@
+@import '../styles/variables.scss';
+
+.titleBox {
+  padding: 21.9rem 20.64% 8.8rem;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  h1 {
+    font-size: 2.8rem;
+    font-weight: $fw-Medium;
+    color: $text-acy-prime;
+    line-height: 4.2rem;
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+  h2 {
+    font-size: $fz-m;
+    font-weight: $fw-Regular;
+    color: rgba(0, 0, 0, 0.65);
+    margin: 0;
+  }
+}
+
+@media (max-width: $pad) {
+  .titleBox {
+    padding: 23.6rem 4.4% 5.6rem;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    h1 {
+      font-size: 2.8rem;
+      font-weight: $fw-Medium;
+      color: $text-acy-prime;
+      line-height: 4.2rem;
+      margin: 0;
+      padding-bottom: 0.3rem;
+    }
+    h2 {
+      font-size: $fz-m;
+      font-weight: $fw-Regular;
+      color: rgba(0, 0, 0, 0.65);
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .titleBox {
+    padding: 14.4rem 7.8% 2rem;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    h1 {
+      font-size: 2.8rem;
+      font-weight: $fw-Medium;
+      color: $text-acy-prime;
+      line-height: 4.2rem;
+      margin: 0;
+      padding-bottom: 0.3rem;
+    }
+    h2 {
+      font-size: $fz-xs;
+      font-weight: $fw-Regular;
+      color: rgba(0, 0, 0, 0.65);
+      margin: 0;
+    }
+  }
+}
