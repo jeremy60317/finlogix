@@ -15,11 +15,11 @@ import './App.scss'
 function App() {
   const dispatch = useDispatch()
   const AppReducer = useSelector((state) => state.AppReducer)
-  const { loading, openModal, modalType } = AppReducer
+  const { loading, openModal } = AppReducer
 
   useEffect(() => {
     dispatch(AppActions.fetchInitialApiSaga())
-  }, [])
+  }, [dispatch])
 
   if (loading) {
     return (

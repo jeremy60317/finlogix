@@ -19,7 +19,7 @@ const Content = ({ contentObj }) => {
       setContentText(show)
     }, 3000)
     return () => clearInterval(interval)
-  }, [])
+  }, [blocks])
 
   return (
     <div className="contentBox">
