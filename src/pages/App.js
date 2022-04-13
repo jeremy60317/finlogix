@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import * as AppActions from '../actions/AppActions'
 import Home from './Home'
 import Header from '../container/Header'
@@ -8,7 +8,7 @@ import Layout from '../component/Layout'
 import Modal from '../component/Modal'
 import LoginPage from './LoginPage'
 import MyWebinarsPage from './MyWebinarsPage'
-import pathName from '../path'
+import pathName from '../utils/path'
 import logo from '../static/ACY Securities.jpeg'
 import './App.scss'
 
@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     dispatch(AppActions.fetchInitialApiSaga())
-  }, [dispatch])
+  }, [])
 
   if (loading) {
     return (
@@ -37,17 +37,15 @@ function App() {
   }
 
   return (
-    <Router>
-      <Layout>
-        <Header />
-        <Routes>
-          <Route index path={pathName.Home} element={<Home />} />
-          <Route path={pathName.Login} element={<LoginPage />} />
-          <Route path={pathName.MyWebinars} element={<MyWebinarsPage />} />
-        </Routes>
-        <Modal open={openModal}></Modal>
-      </Layout>
-    </Router>
+    <Layout>
+      <Header />
+      <Routes>
+        <Route index path={pathName.Home} element={<Home />} />
+        <Route path={pathName.Login} element={<LoginPage />} />
+        <Route path={pathName.MyWebinars} element={<MyWebinarsPage />} />
+      </Routes>
+      <Modal open={openModal}></Modal>
+    </Layout>
   )
 }
 

@@ -4,8 +4,9 @@ import App from './pages/App'
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
-import { Provider } from 'react-redux'
 import rootReducer from './reducers'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import './styles/global.scss'
 
 const sagaMiddleware = createSagaMiddleware()
@@ -19,7 +20,9 @@ sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 )

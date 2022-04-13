@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import * as AppActions from '../actions/AppActions.js'
 import Button from '../component/Button.js'
-import pathName from '../path'
+import pathName from '../utils/path'
 import logo from '../static/ACY Securities.jpeg'
 import './Header.scss'
 

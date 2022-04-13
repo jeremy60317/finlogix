@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import pathName from '../path'
-import cookie from '../cookie'
+import pathName from '../utils/path'
+import cookie from '../utils/cookie'
 import { useDispatch } from 'react-redux'
 import * as AppActions from '../actions/AppActions.js'
 import Card from '../component/Card'

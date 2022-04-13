@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import moment from 'moment'
 import './Card.scss'
 
 const Content = ({ contentObj }) => {
@@ -30,25 +31,26 @@ const Content = ({ contentObj }) => {
 
 const ListCard = ({ data, onClick, index, isListPage }) => {
   const contentObj = JSON.parse(data.content)
+  const formatDate = moment(data.created_at)
+    .add(10, 'days')
+    .format('YYYY/MM/DD hh:mm')
   return (
     <div className="listItemBox">
-      <div className="itemContent">
+      <div
+        className="itemContent"
+        onClick={() => {
+          onClick(index)
+        }}
+      >
         <div className="date">{data.created_at}</div>
         <div className="title">{data.title}</div>
         <Content contentObj={contentObj} />
-        <div className="time">7pm-8:30pm EST</div>
+        <div className="time">{formatDate}</div>
         <div className="registerBox">
           <div className="register">
             {isListPage ? 'Register Now' : 'UnFavor'}
           </div>
-          <div
-            className="icon"
-            onClick={() => {
-              onClick(index)
-            }}
-          >
-            icon
-          </div>
+          <div className="icon">icon</div>
         </div>
       </div>
     </div>
