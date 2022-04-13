@@ -1,8 +1,7 @@
 import { useSelector } from 'react-redux'
-import TitleBar from '../container/TitleBar/TitleBar.js'
-import List from '../container/List/List.js'
-import RegisterForm from '../container/RegisterForm/RegisterForm.js'
-import './App.scss'
+import TitleBar from '../../container/TitleBar/TitleBar.js'
+import List from '../../container/List/List.js'
+import RegisterForm from '../../container/RegisterForm/RegisterForm.js'
 
 function Home() {
   const AppReducer = useSelector((state) => state.AppReducer)

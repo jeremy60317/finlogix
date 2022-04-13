@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import List from '../container/List/List'
+import List from '../../container/List/List'
 
 import './MyWebinarsPage.scss'
 const MyWebinarsPage = () => {
