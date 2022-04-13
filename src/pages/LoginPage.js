@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import * as AppAction from '../actions/AppActions'
-import Button from '../component/Button'
+import Button from '../component/Button/Button'
 import './LoginPage.scss'
 
 const isEmpty = (value) => value === ''

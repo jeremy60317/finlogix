@@ -3,7 +3,7 @@ import pathName from '../utils/path'
 import cookie from '../utils/cookie'
 import { useDispatch } from 'react-redux'
 import * as AppActions from '../actions/AppActions.js'
-import Card from '../component/Card'
+import Card from '../component/Card/Card'
 import './List.scss'
 
 const List = ({ data, pageType }) => {

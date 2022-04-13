@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
-import * as AppActions from '../actions/AppActions.js'
-import Button from '../component/Button'
+import * as AppActions from '../../actions/AppActions.js'
+import Button from '../Button/Button'
 import './AlertBox.scss'
 
 const AlertBox = ({ title, message, submitCallBack }) => {

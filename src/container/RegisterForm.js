@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import * as AppAction from '../actions/AppActions'
-import Button from '../component/Button'
+import Button from '../component/Button/Button'
 import './RegisterForm.scss'
 
 const isEmpty = (value) => value === ''
