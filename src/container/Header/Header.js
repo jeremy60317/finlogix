@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import * as AppActions from '../actions/AppActions.js'
-import Button from '../component/Button/Button.js'
-import pathName from '../utils/path'
-import logo from '../static/ACY Securities.jpeg'
+import * as AppActions from '../../actions/AppActions.js'
+import Button from '../../component/Button/Button.js'
+import pathName from '../../utils/path'
+import logo from '../../static/ACY Securities.jpeg'
 import './Header.scss'
 
 const Header = () => {
