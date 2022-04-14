@@ -4,7 +4,7 @@ import * as AppActions from '../../actions/AppActions.js'
 import Button from '../../component/Button/Button.js'
 import pathName from '../../utils/path'
 import logo from '../../static/ACY Securities.jpeg'
-import './Header.scss'
+import style from './Header.module.scss'
 
 const Header = () => {
   let navigate = useNavigate()
@@ -13,6 +13,10 @@ const Header = () => {
   const {
     auth: { username },
   } = AppReducer
+
+  function onClickLoginButton() {
+    username ? openModal('logout') : toPageType(pathName.Login)
+  }
 
   function toPageType(type = '') {
     navigate(`/${type}`)
@@ -23,21 +27,21 @@ const Header = () => {
   }
 
   return (
-    <div className="header" id="headerDiv">
-      <div className="logoBox" onClick={() => toPageType()}>
-        <img className="logo" src={logo} alt="logo" />
+    <div className={style.header} id="headerDiv">
+      <div className={style.logoBox} onClick={() => toPageType()}>
+        <img className={style.logo} src={logo} alt="logo" />
       </div>
       <div
-        className="burger"
+        className={style.burger}
         onClick={() => {
-          username ? openModal('logout') : toPageType(pathName.Login)
+          onClickLoginButton()
         }}
       >
-        <div className="burgerLine"></div>
-        <div className="burgerLine"></div>
-        <div className="burgerLine"></div>
+        <div className={style.burgerLine}></div>
+        <div className={style.burgerLine}></div>
+        <div className={style.burgerLine}></div>
       </div>
-      <div className="loginBox">
+      <div className={style.logoBox}>
         {username && (
           <Button
             className="myWebinar"
@@ -47,9 +51,7 @@ const Header = () => {
         )}
         <Button
           className="login"
-          onClick={() =>
-            username ? openModal('logout') : toPageType(pathName.Login)
-          }
+          onClick={() => onClickLoginButton()}
           text={username ? 'logout' : 'login'}
         />
       </div>
