@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import * as AppAction from '../../actions/AppActions'
 import Button from '../../component/Button/Button'
@@ -28,22 +28,14 @@ const FormWrap = ({ title, value, onChange, err, type = 'text' }) => {
 const LoginModal = () => {
   let navigate = useNavigate()
   const dispatch = useDispatch()
-  const AppReducer = useSelector((state) => state.AppReducer)
-  const { account, password } = AppReducer
   const [checkData, setCheckData] = useState(false)
+  const [account, setAccount] = useState('')
+  const [password, setPassword] = useState('')
 
   function onClosePage() {
-    dispatch(AppAction.handleChangeAccount(''))
-    dispatch(AppAction.handleChangePassword(''))
+    setAccount('')
+    setPassword('')
     navigate('/')
-  }
-
-  function onChangeAccount(value) {
-    dispatch(AppAction.handleChangeAccount(value))
-  }
-
-  function onChangePassword(value) {
-    dispatch(AppAction.handleChangePassword(value))
   }
 
   function fetchLogin() {
@@ -75,13 +67,13 @@ const LoginModal = () => {
         <FormWrap
           title="Email"
           value={account}
-          onChange={onChangeAccount}
+          onChange={(value) => setAccount(value)}
           err={checkData && validateEmail(account)}
         />
         <FormWrap
           title="password"
           value={password}
-          onChange={onChangePassword}
+          onChange={(value) => setPassword(value)}
           err={checkData && isEmpty(password)}
           type="password"
         />

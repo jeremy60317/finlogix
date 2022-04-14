@@ -3,16 +3,11 @@ import * as actionTypes from '../constants'
 const INITIAL_STATE = {
   openModal: false,
   modalType: '',
-  account: '',
-  password: '',
   auth: {},
   loginStatus: false,
   list: { data: [], link: {}, meta: {} },
   favorList: { data: [], link: {}, meta: {} },
   selectedList: 0,
-  FirstName: '',
-  LastName: '',
-  Email: '',
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -33,16 +28,6 @@ export default (state = INITIAL_STATE, action) => {
         account: '',
         password: '',
         loginStatus: false,
-      }
-    case actionTypes.HANDLE_CHANGE_ACCOUNT:
-      return {
-        ...state,
-        account: action.value,
-      }
-    case actionTypes.HANDLE_CHANGE_PASSWORD:
-      return {
-        ...state,
-        password: action.value,
       }
     //
     case actionTypes.FETCH_LIST_API_SUCCESS:
@@ -84,11 +69,6 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         openModal: false,
         modalType: '',
-      }
-    case actionTypes.ON_CHANGE_REGISTER_INPUT:
-      return {
-        ...state,
-        [action.title]: action.value,
       }
     default:
       return {

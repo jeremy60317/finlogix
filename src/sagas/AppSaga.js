@@ -150,14 +150,8 @@ function* comparList() {
 
 //favor post
 
-export function* fetchFavorPostSaga() {
-  const state = yield select()
-  const { AppReducer } = state
-  const {
-    selectedList: idx,
-    list: { data },
-  } = AppReducer
-  const postId = data[idx].post_id
+export function* fetchFavorPostSaga(action) {
+  const { postId } = action
   const res = yield call(
     fetch,
     `${uri}/me/user/favourite/post-analysis/${postId}`,
@@ -178,13 +172,7 @@ export function* fetchFavorPostSaga() {
 
 //unFavor
 export function* fetchUnFavorPostSaga(action) {
-  const state = yield select()
-  const { AppReducer } = state
-  const {
-    favorList: { data },
-  } = AppReducer
-  const { index } = action
-  const postId = data[index].post_id
+  const { postId } = action
   const res = yield call(
     fetch,
     `${uri}/me/user/favourite/post-analysis/${postId}`,

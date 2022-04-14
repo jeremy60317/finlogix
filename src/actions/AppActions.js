@@ -58,16 +58,6 @@ export const fetchLogoutSagaSuccess = () => ({
   type: actionTypes.FETCH_LOGOUT_SAGA_SUCCESS,
 })
 
-export const handleChangeAccount = (value) => ({
-  type: actionTypes.HANDLE_CHANGE_ACCOUNT,
-  value,
-})
-
-export const handleChangePassword = (value) => ({
-  type: actionTypes.HANDLE_CHANGE_PASSWORD,
-  value,
-})
-
 export const updateListData = (array) => ({
   type: actionTypes.UPDATE_LIST_DATA,
   array,
@@ -78,17 +68,12 @@ export const selectedList = (idx) => ({
   idx,
 })
 
-export const onChangeRegisterInput = (title, value) => ({
-  type: actionTypes.ON_CHANGE_REGISTER_INPUT,
-  title,
-  value,
-})
-
-export const fetchFavorPostSaga = () => ({
+export const fetchFavorPostSaga = (postObj) => ({
   type: actionTypes.FETCH_FAVOR_POST_SAGA,
+  ...postObj,
 })
 
-export const fetchUnFavorPostSaga = (index) => ({
+export const fetchUnFavorPostSaga = (postId) => ({
   type: actionTypes.FETCH_UN_FAVOR_POST_SAGA,
-  index,
+  postId,
 })

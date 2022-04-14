@@ -30,8 +30,8 @@ const List = ({ data, pageType }) => {
     }
   }
 
-  function onClickUnFavor(idx) {
-    dispatch(AppActions.fetchUnFavorPostSaga(idx))
+  function onClickUnFavor(postId) {
+    dispatch(AppActions.fetchUnFavorPostSaga(postId))
   }
 
   return (
@@ -42,15 +42,15 @@ const List = ({ data, pageType }) => {
             data={itm}
             index={idx}
             onClick={
-              isListPage ? (idx) => onClickRegister(idx) : onClickUnFavor
+              isListPage
+                ? (idx) => onClickRegister(idx)
+                : () => onClickUnFavor(itm.post_id)
             }
             key={itm.id}
             isListPage={isListPage}
           />
         )
       })}
-      {/* {isListPage && <div className="up">&lt;</div>}
-      {isListPage && <div className="down">&gt;</div>} */}
     </div>
   )
 }

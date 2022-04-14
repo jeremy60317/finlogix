@@ -33,37 +33,33 @@ const RegisterForm = () => {
   const AppReducer = useSelector((state) => state.AppReducer)
   const {
     list: { data },
-    selectedList,
-    FirstName,
-    LastName,
-    Email,
     auth: { username },
+    selectedList,
   } = AppReducer
-  const [firName, setFirName] = useState(false)
-  const [lasName, setLasName] = useState(false)
-  const [email, setEmail] = useState(false)
+
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [selectValue, setSelectValue] = useState('')
 
   useEffect(() => {
-    setFirName(FirstName ? true : false)
-    setLasName(LastName ? true : false)
-    setEmail(Email ? true : false)
-  }, [FirstName, LastName, Email])
-
-  function handleOnChangeText(title, value) {
-    dispatch(AppAction.onChangeRegisterInput(title, value))
-  }
+    if (data.length > 0 && data[selectedList])
+      setSelectValue(data[selectedList].title)
+  }, [data, selectedList])
 
   function onSubmitDisabled() {
     return (
       !username ||
-      isEmpty(FirstName) ||
-      isEmpty(LastName) ||
-      validateEmail(Email)
+      isEmpty(firstName) ||
+      isEmpty(lastName) ||
+      validateEmail(email)
     )
   }
 
-  function onClickRegisterButton() {
-    dispatch(AppAction.fetchFavorPostSaga())
+  function onClickRegisterButton(firstName, lastName, email, postId) {
+    dispatch(
+      AppAction.fetchFavorPostSaga({ firstName, lastName, email, postId })
+    )
   }
 
   function openModal(type) {
@@ -78,46 +74,44 @@ const RegisterForm = () => {
         day by our professional business experts.
       </div>
       <div className="contentForm">
-        {data.length > 0 && (
-          <div>
-            <div className="contentFormTitle">Topic</div>
-            <div className="inputBox">
-              <select
-                value={data[selectedList].title}
-                name={data[selectedList].title}
-                onChange={(e) => {
-                  dispatch(AppAction.selectedList(e.target.selectedIndex))
-                }}
-              >
-                {data.map((itm, idx) => (
-                  <option key={itm.id} value={itm.title}>
-                    {itm.title}
-                  </option>
-                ))}
-              </select>
-            </div>
+        <div>
+          <div className="contentFormTitle">Topic</div>
+          <div className="inputBox">
+            <select
+              value={selectValue}
+              name={selectValue}
+              onChange={(e) => {
+                dispatch(AppAction.selectedList(e.target.selectedIndex))
+              }}
+            >
+              {data.map((itm, idx) => (
+                <option key={itm.id} value={itm.title}>
+                  {itm.title}
+                </option>
+              ))}
+            </select>
           </div>
-        )}
+        </div>
         <FormWrap
           title="First Name"
-          onChange={(value) => handleOnChangeText('FirstName', value)}
+          onChange={(value) => setFirstName(value)}
           key="First Name"
-          value={FirstName}
-          err={firName ? isEmpty(FirstName) : false}
+          value={firstName}
+          err={firstName ? isEmpty(firstName) : false}
         />
         <FormWrap
           title="Last Name"
-          onChange={(value) => handleOnChangeText('LastName', value)}
+          onChange={(value) => setLastName(value)}
           key="Last Name"
-          value={LastName}
-          err={lasName ? isEmpty(LastName) : false}
+          value={lastName}
+          err={lastName ? isEmpty(lastName) : false}
         />
         <FormWrap
           title="Email"
-          onChange={(value) => handleOnChangeText('Email', value)}
+          onChange={(value) => setEmail(value)}
           key="Email"
-          value={Email}
-          err={email ? validateEmail(Email) : false}
+          value={email}
+          err={email ? validateEmail(email) : false}
         />
       </div>
       <Button
@@ -125,7 +119,14 @@ const RegisterForm = () => {
           onSubmitDisabled() ? 'registerSubmitDisabled' : 'registerSubmit'
         }
         onClick={() =>
-          onSubmitDisabled() ? openModal('goToLogin') : onClickRegisterButton()
+          onSubmitDisabled()
+            ? openModal('goToLogin')
+            : onClickRegisterButton(
+                firstName,
+                lastName,
+                email,
+                data[selectedList].post_id
+              )
         }
         text="Register"
       />
