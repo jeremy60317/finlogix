@@ -40,26 +40,18 @@ const Header = () => {
       <div className="loginBox">
         {username && (
           <Button
-            propsClassName="myWebinar"
+            className="myWebinar"
             onClick={() => toPageType(pathName.MyWebinars)}
             text="My Webinar"
           />
         )}
-        {username ? (
-          <Button
-            propsClassName="login"
-            onClick={() => openModal('logout')}
-            text="logout"
-          />
-        ) : (
-          <Button
-            propsClassName="login"
-            onClick={() => {
-              toPageType(pathName.Login)
-            }}
-            text="login"
-          />
-        )}
+        <Button
+          className="login"
+          onClick={() =>
+            username ? openModal('logout') : toPageType(pathName.Login)
+          }
+          text={username ? 'logout' : 'login'}
+        />
       </div>
     </div>
   )

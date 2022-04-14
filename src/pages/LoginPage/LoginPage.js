@@ -79,11 +79,7 @@ const LoginModal = () => {
         />
       </div>
       <div className="modalLoginBox">
-        <Button
-          propsClassName="login"
-          onClick={() => fetchLogin()}
-          text="login"
-        />
+        <Button className="login" onClick={() => fetchLogin()} text="login" />
       </div>
     </div>
   )

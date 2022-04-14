@@ -115,7 +115,7 @@ const RegisterForm = () => {
         />
       </div>
       <Button
-        propsClassName={
+        className={
           onSubmitDisabled() ? 'registerSubmitDisabled' : 'registerSubmit'
         }
         onClick={() =>

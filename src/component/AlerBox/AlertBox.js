@@ -12,13 +12,9 @@ const AlertBox = ({ title, message, submitCallBack }) => {
     <div className="alertBox">
       <div className="alertBoxTitle">{title}</div>
       <div className="alertBoxMessage">{message}</div>
+      <Button className="noButton" text="no" onClick={() => closeModal()} />
       <Button
-        propsClassName="noButton"
-        text="no"
-        onClick={() => closeModal()}
-      />
-      <Button
-        propsClassName="yesButton"
+        className="yesButton"
         text="yes"
         onClick={() => {
           closeModal()

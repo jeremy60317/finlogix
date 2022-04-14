@@ -1,8 +1,8 @@
 import './Button.scss'
 
-const Button = ({ propsClassName, onClick, text }) => {
+const Button = ({ className, onClick, text }) => {
   return (
-    <button className={`${propsClassName}`} onClick={onClick}>
+    <button className={`${className}`} onClick={onClick}>
       {text}
     </button>
   )
